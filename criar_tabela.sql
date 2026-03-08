@@ -1,0 +1,11 @@
+CREATE TABLE formulario (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    mensagem VARCHAR(200) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    idade INTEGER NOT NULL CHECK (idade >= 20 AND idade <= 60),
+    evento VARCHAR(200) NOT NULL,
+    checkin BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
